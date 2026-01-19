@@ -102,8 +102,23 @@ li strong {
 }
 
 .activities-list li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.5rem;
     margin-bottom: 0.5rem;
     line-height: 1.4;
+}
+
+.activity-date {
+    font-weight: 600;
+    color: #111;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.activity-content::before {
+    content: "·  ";
 }
 
 /* Footer */
@@ -146,5 +161,19 @@ footer p {
         width: 150px;
         height: 150px;
         margin-bottom: 1rem;
+    }
+
+    .activities-list li {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .activity-date {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .activity-content::before {
+        content: none;
     }
 }
