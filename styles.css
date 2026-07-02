@@ -24,21 +24,38 @@ main {
 }
 
 /* Header with profile image */
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.top-nav {
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-align: left;
+}
+
 .header-container {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 .header-content {
     flex: 1;
+    padding-right: calc(260px + 2rem);
 }
 
 .profile-image {
-    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 260px;
-    align-self: stretch;
+    height: 100%;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -47,7 +64,7 @@ main {
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #111;
 }
 
@@ -143,6 +160,18 @@ footer {
         font-size: 2rem;
     }
 
+    .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .top-nav {
+        width: auto;
+        white-space: normal;
+        margin-bottom: 1rem;
+    }
+
     h2 {
         font-size: 1.5rem;
     }
@@ -154,11 +183,18 @@ footer {
     .header-container {
         flex-direction: column-reverse;
         align-items: center;
+        position: static;
+    }
+
+    .header-content {
+        padding-right: 0;
     }
 
     .profile-image {
-        width: 150px;
-        height: 150px;
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
         margin-bottom: 1rem;
     }
 
